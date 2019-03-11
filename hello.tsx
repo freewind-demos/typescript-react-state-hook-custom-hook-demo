@@ -1,14 +1,8 @@
-import React, {useEffect} from 'react'
-import {useState} from "react";
+import React from 'react'
+import useMyHook from "./my-hook";
 
 export default function Hello() {
-  const [count, setCount] = useState(0)
-  useEffect(() => {
-    console.log('Component is rendered')
-    return () => {
-      console.log('Clean up this component')
-    }
-  })
+  const [count, setCount] = useMyHook(0);
   return (
     <div>
       <p>You clicked {count} times</p>
